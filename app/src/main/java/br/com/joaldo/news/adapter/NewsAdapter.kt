@@ -1,6 +1,5 @@
 package br.com.joaldo.news.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -18,19 +17,14 @@ class NewsAdapter(
 
     var onItemClickListener: (news: News) -> Unit = {}
 
-    lateinit var context: Context
-
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.item_news_title)
         val description: TextView = itemView.findViewById(R.id.item_news_description)
         val image: ImageView = itemView.findViewById(R.id.item_news_image)
-
-        val cl: ConstraintLayout = itemView.findViewById(R.id.item_news_constraint_layout)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
-        context = parent.context
         return NewsViewHolder(view)
     }
 
@@ -38,9 +32,9 @@ class NewsAdapter(
         val news = news[position]
         holder.title.text = news.title
         holder.description.text = news.description
-        Glide.with(context).load(news.image).into(holder.image)
+        Glide.with(holder.itemView.context).load(news.image).into(holder.image)
 
-        holder.cl.setOnClickListener {
+        holder.itemView.setOnClickListener {
             news.position = position
             onItemClickListener(news)
         }
