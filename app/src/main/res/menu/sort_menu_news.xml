@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_news_title_asc"
+        android:title="@string/a_to_z" />
+    <item
+        android:id="@+id/menu_news_title_desc"
+        android:title="@string/z_to_a" />
+    <item
+        android:id="@+id/menu_news_date_last"
+        android:title="Latter" />
+</menu>

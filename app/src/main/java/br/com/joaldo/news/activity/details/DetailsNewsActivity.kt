@@ -1,8 +1,7 @@
-package br.com.joaldo.news.activity
+package br.com.joaldo.news.activity.details
 
-import android.annotation.SuppressLint
-import android.content.res.Resources
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +13,12 @@ class DetailsNewsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details_news)
+
+        val actionBar = supportActionBar
+        actionBar?.let {
+            title = "Detalhe da noticia"
+            it.setDisplayHomeAsUpEnabled(true)
+        }
 
         val news = intent.getSerializableExtra("news") as News
 
@@ -27,5 +32,10 @@ class DetailsNewsActivity : AppCompatActivity() {
         text.text = news.text
 
         Glide.with(this).load(news.image).into(image)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        onBackPressed()
+        return true
     }
 }

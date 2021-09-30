@@ -9,7 +9,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".activity.DetailsNewsActivity">
+        tools:context=".activity.details.DetailsNewsActivity">
 
         <ImageView
             android:id="@+id/activity_details_image"

@@ -11,6 +11,7 @@
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/sort_menu_news.xml" value="0.25" />
       </map>
     </option>
   </component>

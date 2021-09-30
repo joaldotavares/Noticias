@@ -1,11 +1,10 @@
-package br.com.joaldo.news.adapter
+package br.com.joaldo.news.activity.news
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
 import br.com.joaldo.news.notice.News
@@ -21,6 +20,7 @@ class NewsAdapter(
         val title: TextView = itemView.findViewById(R.id.item_news_title)
         val description: TextView = itemView.findViewById(R.id.item_news_description)
         val image: ImageView = itemView.findViewById(R.id.item_news_image)
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
