@@ -3,7 +3,7 @@ package br.com.joaldo.news.notice
 class NewsDao {
     fun all(): List<News>{
         return listOf(
-            News(
+            News(1,
                 "Hamilton fatura 100ª vitória na F1 em final caótico com chuva na Rússia",
                 "Norris se nega a parar por pneus intermediários, é surpreendido com temporal e acaba superado pelo piloto da Mercedes, que reassume liderança do campeonato; Verstappen e Sainz completam pódio\n",
                 "https://s2.glbimg.com/Uu60SiV68aF4GMIUtmEx4vu9zNs=/0x0:1024x576/540x304/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2021/x/H/55TVz8RDOI7vI44cTszw/gettyimages-1235513842.jpg",
@@ -32,7 +32,7 @@ class NewsDao {
                         "\n10. Leclerc vem para os boxes na volta 36 e, com problema na fixação de um dos pneus, retorna para a pista em 13º lugar, à frente de Bottas. Alonso e Pérez também param e, com isso, Norris recupera a liderança da prova, tendo Hamilton na segunda colocação. O espanhol da Alpine, encontrando-se no meio do grid após o pit stop, ultrapassou Verstappen pelo sexto lugar." +
                         "\n11. Algumas gotas de chuva começaram a cair a oito voltas para o fim da prova, quando Hamilton se aproximava de Norris e Pérez superou Sainz pelo terceiro lugar. Hamilton foi para os boxes para adotar os pneus intermediários, repetindo a estratégia de Verstappen, Sainz, Bottas, Russell, Raikkonen, Mazepin, Ricciardo e Stroll. Norris, na ponta, optou por permanecer na pista e começou ali seu pesadelo: a chuva apertou e ele, patinando, quase bateu na barreira de proteção. De segundo, caiu para sétimo lugar, com Verstappen assumindo a vice-liderança da disputa nos giros finais."
             ),
-            News(
+            News(2,
                 "Setor de serviços lidera contratações; veja lista das profissões em alta e em baixa",
                 "Levantamento da CNC mostra que atividades do setor de serviços dominam o ranking de geração de vagas com carteira assinada em 12 meses. Já as ocupações que mais perderam vagas foram motorista, cobrador, escriturário, carteiro e professor de ensino superior.",
                 "https://s2.glbimg.com/P6re2xZP1yviR8mX6O8ZS7OMJz8=/0x154:2048x1306/1080x608/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/a/1/irj6mSS3eFiHNQe7V9bg/50675416713-632cb8bc29-k.jpg",
@@ -61,7 +61,7 @@ class NewsDao {
                         "\n" +
                         "\"Profissões como carteiro e cobrador já estavam em decadência e que a pandemia de certa forma agravou\", afirma economista."
             ),
-            News(
+            News(3,
                 "Polícia prende parte de quadrilha que usava nome do Ministério da Saúde para aplicar golpes\n",
                 "Investigações apontam que pelo menos meio milhão de reais já foram roubados. Com medo do golpe, cerca de 1.200 pessoas já se negaram a participar da pesquisa que o ministério realmente está fazendo nas capitais e regiões metropolitanas.\n",
                 "https://s2.glbimg.com/uZuo-NMQcID44VKUDV6EoFOkLq8=/0x0:1280x852/1000x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/I/7/EXc6tiTLC2lbUk7Z9WiA/f6c367fe-9765-4694-b834-60895259a24d.jpg",
@@ -88,7 +88,7 @@ class NewsDao {
                         "\n" +
                         "\"A gente não descarta que há hipótese sim da participação de outras pessoas, dentre elas até as pessoas que participavam emprestando contas bancária\", relata Rodrigo Aires, delegado do Deic."
             ),
-            News(
+            News(4,
                 "Eleições na Alemanha: entenda como os alemães escolhem o novo chanceler",
                 "Eleitores votam duas vezes: na primeira, em um candidato a representar o distrito eleitoral. Na segunda, no partido de preferência. Após votação, sigla mais bem votada precisa confirmar a maioria com outras agremiações para levar adiante o nome do indicado a chanceler.",
                 "https://s2.glbimg.com/VjdpLCC-1LTgzpfO5poY2JpTrLU=/0x0:5500x3094/1080x608/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/h/6/lvcH80SBqV7wyeBwB4MQ/2021-09-07t095557z-1824849597-rc2xkp90v25j-rtrmadp-3-germany-politics.jpg",
@@ -115,7 +115,7 @@ class NewsDao {
                         "Assentos extras — Se um partido obtiver um melhor desempenho na primeira votação (distrital) do que na segunda (por legenda), o número de cadeiras no Parlamento de outro partido aumenta para manter a proporcionalidade. A ideia é evitar que o voto no representante do distrito tenha mais peso do que o voto no partido. Por causa disso, os 598 assentos \"base\" se tornaram, ao fim da última eleição, 709 no total.\n" +
                         "A regra dos 5% — É a cláusula de barreira alemã. Um partido só entra no Parlamento se chegar aos 5% dos votos na votação por legenda. A ideia é evitar que grupos pequenos e extremistas elejam parlamentares."
             ),
-            News(
+            News(5,
                 "Desconfiança na Presidência da República sobe para 50%, diz Datafolha",
                 "Na pesquisa anterior, de julho de 2019, percentual era 31%. Parcela da " +
                         "população que diz não confiar no STF também subiu. Datafolha ouviu presencialmente " +
@@ -187,7 +187,7 @@ class NewsDao {
                         "Confia pouco: 51% (53% em julho de 2019 e 51% em abril de 2019)\n" +
                         "Não confia: 29% (24% em julho de 2019 e 26% em abril de 2019)"
             ),
-            News(
+            News(6,
                 "PF indicia 22 pessoas por envolvimento com comércio ilegal de criptomoedas; Justiça defere " +
                         "bloqueio de R\$ 38 bilhões das contas dos suspeitos",
                 "Entre os indiciados está Glaidson Santos e sua mulher Myrellis Yoseline Zerpa. Eles respondem " +
@@ -203,7 +203,7 @@ class NewsDao {
                         "\n" +
                         "Glaidson está preso em uma unidade do sistema penitenciário de Gericino, na Zona Oeste do Rio."
             ),
-            News(
+            News(7,
                 "'Fundação' troca temas ricos do livro clássico de ficção científica por aventura espacial genérica",
                 "Produção de nível cinematográfico supera o padrão técnico para séries, mas desvio da história escrita por Isaac Asimov vai afastar fãs.",
                 "https://s2.glbimg.com/JN7oDnfcH3gwyKyuY2WMc3Qz6C0=/0x0:3840x1920/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/b/S/86ZrU4RzGsItlOpgm4QA/leah-harvey-foundation.jpg",
@@ -234,7 +234,7 @@ class NewsDao {
                         "\n" +
                         "A decadência é inevitável, mas ele tem um plano. Caso lhe deem a chance de formar a Fundação, uma instituição com o intuito de reunir todo o conhecimento da humanidade em uma enciclopédia, esse longo período pode durar apenas um milênio."
             ),
-            News(
+            News(8,
                 "Após recuo de Ministério da Saúde, capitais anunciam vacinação de adolescentes",
                 "Imunização ocorrerá para adolescentes de Brasília, Cuiabá e Macapá. Na quarta, Ministério da Saúde recuou e voltou a liberar a imunização desse público contra a Covid.",
                 "https://s2.glbimg.com/zPUUdJCpds3aeXqOD434cx0eJVo=/0x73:2048x1225/540x304/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/E/t/BDiRZzTaGMmtQZhVP2SQ/51478891452-a31ce8e3de-k.jpg",
@@ -259,7 +259,7 @@ class NewsDao {
                         "\n" +
                         "Na ocasião, a Secretaria afirmou que se tratava de \"uma doença autoimune, rara e grave, normalmente sem uma causa conhecida capaz de desencadeá-la, e não há como atribuir relação causal entre PTT e a vacina contra COVID-19 de RNA mensageiro, como é o caso da Pfizer\", afirmou a secretaria."
             ),
-            News(
+            News(9,
                 "Banco Central da China declara ilegais todas as transações com criptomoedas",
                 "Bitcoin caiu quase 5% depois do anúncio, que representa uma intensificação da repressão sobre esse tipo de operação.",
                 "https://s2.glbimg.com/WAlnPQevDk_p_Ztv4PYvYCpQK5I=/0x230:4240x2615/540x304/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/0/b/ugqOcQR6uXXQUcI06HIw/foto-01-real-invest-materia-05.jpg",
@@ -286,7 +286,7 @@ class NewsDao {
                         "\n" +
                         "Em junho, as autoridades chinesas informaram que mais de 1.000 pessoas foram detidas por lucrar com atividades criminosas para comprar criptomoedas."
             ),
-            News(
+            News(10,
                 "Hospitais do RS relatam impactos em atendimentos após órgão federal suspender produção de radiofármacos",
                 "Instituto de Pesquisas Energéticas e Nucleares não recebeu recursos suficientes para manter produção de insumos utilizados no diagnóstico e no tratamento de câncer. Ministério da Ciência, Tecnologia e Inovação diz que liberação de verba depende do Congresso.",
                 "https://s2.glbimg.com/JNBcqNQeFsdl8EaeKONWVzjgLik=/0x49:907x559/540x304/smart/filters:max_age(3600)/https://i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2021/K/u/6outdFST2bWl2PaY6UMQ/whatsapp-image-2021-09-23-at-18.58.11.jpeg",

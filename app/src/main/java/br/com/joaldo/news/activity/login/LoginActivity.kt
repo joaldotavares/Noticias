@@ -1,4 +1,4 @@
-package br.com.joaldo.news.activity
+package br.com.joaldo.news.activity.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.appcompat.app.AppCompatActivity
 import br.com.joaldo.news.R
+import br.com.joaldo.news.activity.home.HomeActivity
 import br.com.joaldo.news.user.User
 import br.com.joaldo.news.user.UserDao
 import com.google.android.material.textfield.TextInputLayout
@@ -34,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
         val userLogin = username.editText as EditText
         val userPassword = password.editText as EditText
         if (user.username == userLogin.text.toString() && user.password == userPassword.text.toString()) {
-            val intent = Intent(this, NewsActivity::class.java)
+            val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
             finish()
         }

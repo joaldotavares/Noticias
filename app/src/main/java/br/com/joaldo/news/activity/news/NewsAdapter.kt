@@ -1,11 +1,10 @@
-package br.com.joaldo.news.adapter
+package br.com.joaldo.news.activity.news
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
 import br.com.joaldo.news.notice.News
