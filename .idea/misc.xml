@@ -9,7 +9,7 @@
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/layout/activity_details_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_home.xml" value="0.21481481481481482" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2359375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.25" />
         <entry key="app/src/main/res/menu/menu_news.xml" value="0.14166666666666666" />

@@ -1,5 +1,6 @@
 package br.com.joaldo.news.activity.details
 
+import android.app.ActionBar
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ class DetailsNewsFragment: Fragment() {
             news = args.news
         }
     }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
