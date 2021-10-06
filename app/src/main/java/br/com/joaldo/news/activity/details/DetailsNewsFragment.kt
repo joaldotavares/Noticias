@@ -12,6 +12,8 @@ import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
 import br.com.joaldo.news.R
+import br.com.joaldo.news.databinding.ActivityDetailsNewsBinding
+import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
 import com.bumptech.glide.Glide
 
@@ -19,6 +21,7 @@ class DetailsNewsFragment: Fragment() {
 
     private val args by navArgs<DetailsNewsFragmentArgs>()
     private lateinit var news: News
+    private lateinit var binding: ActivityDetailsNewsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,16 +34,7 @@ class DetailsNewsFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val image = view.findViewById<ImageView>(R.id.activity_details_image)
-        val title = view.findViewById<TextView>(R.id.activity_details_title)
-        val description = view.findViewById<TextView>(R.id.activity_details_description)
-        val text = view.findViewById<TextView>(R.id.activity_details_text)
-
-        title.text = news.title
-        description.text = news.description
-        text.text = news.text
-
-        Glide.with(this).load(news.image).into(image)
+        binding.news = news
     }
 
     override fun onCreateView(
@@ -48,6 +42,8 @@ class DetailsNewsFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_details_news, container, false)
+        binding = ActivityDetailsNewsBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        return binding.root
     }
 }
