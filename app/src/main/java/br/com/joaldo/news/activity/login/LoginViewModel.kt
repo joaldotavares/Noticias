@@ -16,7 +16,7 @@ class LoginViewModel(
     fun verifyLoginUser(username: String, password: String) {
         viewModelScope.launch {
             try {
-                val isValid = withContext(Dispatchers.IO) {
+                val isValid = withContext(Dispatchers.Default) {
                     repository.verifyLogin(username, password)
                 }
                 withContext(Dispatchers.Main) {

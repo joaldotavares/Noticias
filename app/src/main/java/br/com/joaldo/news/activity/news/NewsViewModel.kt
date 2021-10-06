@@ -23,7 +23,9 @@ class NewsViewModel(
                 val news = withContext(Dispatchers.Default){
                     repository.getNews()
                 }
-                _newsViewModel.value = news
+                withContext(Dispatchers.Main){
+                    _newsViewModel.value = news
+                }
             }catch (e: Exception){
                 Log.e("Erro News", e.message.toString())
             }

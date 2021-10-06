@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
                 nextScreen()
             }else{
                 val builder = AlertDialog.Builder(this)
-                builder.setTitle("Login Vailed")
+                builder.setTitle("Login Failed")
                 builder.setMessage("Usuário ou senha inválidos")
                 builder.setPositiveButton("OK"){_, _ ->}
                 val alert = builder.create()

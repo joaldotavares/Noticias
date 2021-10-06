@@ -15,12 +15,6 @@
             android:name=".activity.home.HomeActivity"
             android:exported="true" />
         <activity
-            android:name=".activity.DetailsNewsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".activity.NewsActivity"
-            android:exported="true" />
-        <activity
             android:name=".activity.login.LoginActivity"
             android:exported="true">
             <intent-filter>

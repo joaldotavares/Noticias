@@ -1,6 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Theme.Noticias" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="Theme.Noticias" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">#133663</item>
         <item name="colorPrimaryVariant">#0b284d</item>

@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/newsFragment"
         android:name="br.com.joaldo.news.activity.news.NewsFragment"
-        android:label="NewsFragment" >
+        android:label="@string/news_fragment_bar_title" >
         <action
             android:id="@+id/action_newsFragment_to_detailsNewsFragment"
             app:destination="@id/detailsNewsFragment" />
@@ -15,7 +15,7 @@
     <fragment
         android:id="@+id/detailsNewsFragment"
         android:name="br.com.joaldo.news.activity.details.DetailsNewsFragment"
-        android:label="DetailsNewsFragment" >
+        android:label="@string/news_details_fragment_bar_title" >
         <argument
             android:name="news"
             app:argType="br.com.joaldo.news.notice.News" />
