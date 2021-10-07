@@ -1,5 +1,6 @@
 package br.com.joaldo.news.activity.news
 
+import android.app.ActivityManager
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
+import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.notice.NewsDao
 import br.com.joaldo.news.repository.NewsDataSourceImpl
@@ -19,6 +21,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 class NewsFragment : Fragment() {
 
     private val newsViewModel: NewsViewModel by viewModel()
+    lateinit var binding: ActivityNewsBinding
     lateinit var adapter: NewsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,27 +33,26 @@ class NewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_news, container, false)
+        binding = ActivityNewsBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val listNews = view.findViewById<RecyclerView>(R.id.activity_news_recyclerview)
         newsViewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
-            configAdapter(it, listNews)
+            configAdapter(it)
         })
         newsViewModel.findNews()
     }
 
     private fun configAdapter(
-        it: List<News>,
-        listNews: RecyclerView
+        it: List<News>
     ) {
         adapter = NewsAdapter(it)
-        listNews.adapter = adapter
+        binding.activityNewsRecyclerview.adapter = adapter
 
-        listNews.layoutManager =
+        binding.activityNewsRecyclerview.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
         adapter.onItemClickListener = { it ->
