@@ -14,11 +14,11 @@ import br.com.joaldo.news.R
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.notice.NewsDao
 import br.com.joaldo.news.repository.NewsDataSourceImpl
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsFragment : Fragment() {
 
-    private lateinit var viewModel: NewsViewModel
-    private lateinit var factory: NewsViewModel.NewsViewModelProvider
+    private val newsViewModel: NewsViewModel by viewModel()
     lateinit var adapter: NewsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,13 +37,10 @@ class NewsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val listNews = view.findViewById<RecyclerView>(R.id.activity_news_recyclerview)
-
-        factory = NewsViewModel.NewsViewModelProvider(NewsDataSourceImpl(NewsDao()))
-        viewModel = ViewModelProvider(this, factory).get(NewsViewModel::class.java)
-        viewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
+        newsViewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
             configAdapter(it, listNews)
         })
-        viewModel.findNews()
+        newsViewModel.findNews()
     }
 
     private fun configAdapter(

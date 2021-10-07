@@ -31,7 +31,7 @@ class NewsViewModel(
         }
     }
 
-    class NewsViewModelProvider(
+   /* class NewsViewModelProvider(
         private val repository: NewsDataSource
     ): ViewModelProvider.Factory{
         override fun <T : ViewModel?> create(modelClass: Class<T>): T {
@@ -42,6 +42,6 @@ class NewsViewModel(
             }
         }
 
-    }
+    }*/
 
 }
