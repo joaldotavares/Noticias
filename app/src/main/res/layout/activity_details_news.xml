@@ -4,7 +4,7 @@
     <data>
         <variable
             name="news"
-            type="br.com.joaldo.news.notice.News" />
+            type="br.com.joaldo.news.repository.network.response.Article" />
     </data>
 
     <ScrollView
@@ -24,8 +24,7 @@
                 android:layout_width="0dp"
                 android:layout_height="160dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/news"
-                app:imgUrl="@{news.image}"
+                app:imgUrl="@{news.urlToImage}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -64,7 +63,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:justificationMode="inter_word"
-                android:text="@{news.text}"
+                android:text="@{news.content}"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="@id/activity_details_description"

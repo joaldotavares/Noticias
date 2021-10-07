@@ -2,7 +2,9 @@ package br.com.joaldo.news.activity.login
 
 import android.util.Log
 import androidx.lifecycle.*
-import br.com.joaldo.news.repository.LoginDataSource
+import br.com.joaldo.news.repository.mock.LoginDataSource
+import br.com.joaldo.news.repository.network.API_KEY
+import br.com.joaldo.news.repository.network.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

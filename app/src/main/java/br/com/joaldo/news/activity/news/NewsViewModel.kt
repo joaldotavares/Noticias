@@ -1,32 +1,32 @@
 package br.com.joaldo.news.activity.news
 
 import android.util.Log
-import androidx.lifecycle.*
-import br.com.joaldo.news.notice.News
-import br.com.joaldo.news.repository.NewsDataSource
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import br.com.joaldo.news.repository.network.API_KEY
+import br.com.joaldo.news.repository.network.Repository
+import br.com.joaldo.news.repository.network.response.NewsApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
-import java.lang.IllegalArgumentException
 
-class NewsViewModel(
-    private val repository: NewsDataSource
-): ViewModel() {
+class NewsViewModel : ViewModel() {
 
-    private val _newsViewModel = MutableLiveData<List<News>>()
-    val newsViewModel: LiveData<List<News>> get() = _newsViewModel
+    private val _newsViewModel = MutableLiveData<NewsApi>()
+    val newsViewModel: LiveData<NewsApi> get() = _newsViewModel
 
-    fun findNews(){
+    fun findNews() {
         viewModelScope.launch {
             try {
-                val news = withContext(Dispatchers.Default){
-                    repository.getNews()
+                val news = withContext(Dispatchers.IO) {
+                    Repository.getApi().getHeadlines("br", API_KEY)
                 }
-                withContext(Dispatchers.Main){
+                withContext(Dispatchers.Main) {
                     _newsViewModel.value = news
                 }
-            }catch (e: Exception){
+            } catch (e: Exception) {
                 Log.e("Erro News", e.message.toString())
             }
         }

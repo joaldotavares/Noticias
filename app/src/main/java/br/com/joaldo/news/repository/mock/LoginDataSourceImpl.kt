@@ -1,4 +1,4 @@
-package br.com.joaldo.news.repository
+package br.com.joaldo.news.repository.mock
 
 class LoginDataSourceImpl: LoginDataSource {
     override suspend fun verifyLogin(username: String, password: String): Boolean {
