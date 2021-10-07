@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newsFragment">
+
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="br.com.joaldo.news.activity.news.NewsFragment"
+        android:label="@string/news_fragment_title" >
+        <action
+            android:id="@+id/action_newsFragment_to_detailsNewsFragment"
+            app:destination="@id/detailsNewsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsNewsFragment"
+        android:name="br.com.joaldo.news.activity.details.DetailsNewsFragment"
+        android:label="@string/details_news_fragment_title" >
+        <argument
+            android:name="news"
+            app:argType="br.com.joaldo.news.notice.News" />
+    </fragment>
+</navigation>

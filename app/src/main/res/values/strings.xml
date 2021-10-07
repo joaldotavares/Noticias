@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Noticias</string>
+    <string name="news_fragment_title">Notícias</string>
+    <string name="details_news_fragment_title">Detalhes da notícia</string>
 </resources>
