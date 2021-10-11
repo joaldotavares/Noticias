@@ -5,7 +5,7 @@ import br.com.joaldo.news.notice.News
 class UserDao {
     companion object {
         fun inserir(): User {
-            return User("joaldo", "123456")
+            return User("", "")
         }
     }
 }

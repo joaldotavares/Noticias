@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Noticias</string>
+
+    <string name="news_fragment_bar_title">Notícias</string>
+    <string name="news_details_fragment_bar_title">Detalhes da notícia</string>
+
 </resources>
