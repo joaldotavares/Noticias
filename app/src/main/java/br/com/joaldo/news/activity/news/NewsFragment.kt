@@ -6,23 +6,22 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import br.com.joaldo.news.R
+import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
-import br.com.joaldo.news.notice.NewsDao
-import br.com.joaldo.news.repository.NewsDataSourceImpl
+import br.com.joaldo.news.repository.network.response.NewsApi
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsFragment : Fragment() {
 
-    private lateinit var viewModel: NewsViewModel
-    private lateinit var factory: NewsViewModel.NewsViewModelProvider
+    private val newsViewModel: NewsViewModel by viewModel()
     lateinit var adapter: NewsAdapter
+    private lateinit var binding: ActivityNewsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true)
     }
 
     override fun onCreateView(
@@ -30,30 +29,26 @@ class NewsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.activity_news, container, false)
+        binding = ActivityNewsBinding.inflate(inflater, container, false)
+        binding.lifecycleOwner = this
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        val listNews = view.findViewById<RecyclerView>(R.id.activity_news_recyclerview)
-
-        factory = NewsViewModel.NewsViewModelProvider(NewsDataSourceImpl(NewsDao()))
-        viewModel = ViewModelProvider(this, factory).get(NewsViewModel::class.java)
-        viewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
-            configAdapter(it, listNews)
+        newsViewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
+            configAdapter(it)
         })
-        viewModel.findNews()
+        newsViewModel.findNews()
     }
 
     private fun configAdapter(
-        it: List<News>,
-        listNews: RecyclerView
+        it: NewsApi
     ) {
         adapter = NewsAdapter(it)
-        listNews.adapter = adapter
+        binding.activityNewsRecyclerview.adapter = adapter
 
-        listNews.layoutManager =
+        binding.activityNewsRecyclerview.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
         adapter.onItemClickListener = { it ->

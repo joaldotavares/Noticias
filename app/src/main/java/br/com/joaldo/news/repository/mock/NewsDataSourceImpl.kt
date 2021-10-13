@@ -1,4 +1,4 @@
-package br.com.joaldo.news.repository
+package br.com.joaldo.news.repository.mock
 
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.notice.NewsDao

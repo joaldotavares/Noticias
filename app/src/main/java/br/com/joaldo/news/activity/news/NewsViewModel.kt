@@ -3,23 +3,24 @@ package br.com.joaldo.news.activity.news
 import android.util.Log
 import androidx.lifecycle.*
 import br.com.joaldo.news.notice.News
-import br.com.joaldo.news.repository.NewsDataSource
+import br.com.joaldo.news.repository.mock.NewsDataSource
+import br.com.joaldo.news.repository.network.API_KEY
+import br.com.joaldo.news.repository.network.Repository
+import br.com.joaldo.news.repository.network.response.Article
+import br.com.joaldo.news.repository.network.response.NewsApi
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.IllegalArgumentException
 
-class NewsViewModel(
-    private val repository: NewsDataSource
-): ViewModel() {
-    private val _newsViewModel = MutableLiveData<List<News>>()
-    val newsViewModel: LiveData<List<News>> get() = _newsViewModel
+class NewsViewModel : ViewModel() {
+    private val _newsViewModel = MutableLiveData<NewsApi>()
+    val newsViewModel: LiveData<NewsApi> get() = _newsViewModel
 
     fun findNews(){
         viewModelScope.launch {
             try {
-                val news = withContext(Dispatchers.Default){
-                    repository.getNews()
+                val news = withContext(Dispatchers.IO){
+                    Repository.getApi().getHeadlines("br", API_KEY)
                 }
 
                 withContext(Dispatchers.Main){
@@ -30,18 +31,4 @@ class NewsViewModel(
             }
         }
     }
-
-    class NewsViewModelProvider(
-        private val repository: NewsDataSource
-    ): ViewModelProvider.Factory{
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if(modelClass.isAssignableFrom(NewsViewModel::class.java)){
-                return NewsViewModel(repository) as T
-            }else{
-                throw IllegalArgumentException("Unknown ViewModel Class")
-            }
-        }
-
-    }
-
 }

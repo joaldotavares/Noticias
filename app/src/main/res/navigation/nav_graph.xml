@@ -18,6 +18,6 @@
         android:label="@string/details_news_fragment_title" >
         <argument
             android:name="news"
-            app:argType="br.com.joaldo.news.notice.News" />
+            app:argType="br.com.joaldo.news.repository.network.response.Article" />
     </fragment>
 </navigation>

@@ -2,7 +2,7 @@ package br.com.joaldo.news.activity.login
 
 import android.util.Log
 import androidx.lifecycle.*
-import br.com.joaldo.news.repository.LoginDataSource
+import br.com.joaldo.news.repository.mock.LoginDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -30,16 +30,16 @@ class LoginViewModel(
         }
     }
 
-    class LoginViewModelProvider(
-        private val repository: LoginDataSource
-    ): ViewModelProvider.Factory{
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if(modelClass.isAssignableFrom(LoginViewModel::class.java)){
-                return LoginViewModel(repository) as T
-            }else{
-                throw IllegalArgumentException("Unknown ViewModel Class")
-            }
-        }
-
-    }
+//    class LoginViewModelProvider(
+//        private val repository: LoginDataSource
+//    ): ViewModelProvider.Factory{
+//        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+//            if(modelClass.isAssignableFrom(LoginViewModel::class.java)){
+//                return LoginViewModel(repository) as T
+//            }else{
+//                throw IllegalArgumentException("Unknown ViewModel Class")
+//            }
+//        }
+//
+//    }
 }

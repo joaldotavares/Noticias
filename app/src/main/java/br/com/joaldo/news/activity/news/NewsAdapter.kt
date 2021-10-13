@@ -8,13 +8,15 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
 import br.com.joaldo.news.notice.News
+import br.com.joaldo.news.repository.network.response.Article
+import br.com.joaldo.news.repository.network.response.NewsApi
 import com.bumptech.glide.Glide
 
 class NewsAdapter(
-    private val news: List<News>
+    private val news: NewsApi
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
-    var onItemClickListener: (news: News) -> Unit = {}
+    var onItemClickListener: (news: Article) -> Unit = {}
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val title: TextView = itemView.findViewById(R.id.item_news_title)
@@ -28,18 +30,17 @@ class NewsAdapter(
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
-        val news = news[position]
+        val news = news.articles[position]
         holder.title.text = news.title
         holder.description.text = news.description
-        Glide.with(holder.itemView.context).load(news.image).into(holder.image)
+        Glide.with(holder.itemView.context).load(news.urlToImage).into(holder.image)
 
         holder.itemView.setOnClickListener {
-            news.position = position
             onItemClickListener(news)
         }
     }
 
     override fun getItemCount(): Int {
-        return news.size
+        return news.articles.size
     }
 }
