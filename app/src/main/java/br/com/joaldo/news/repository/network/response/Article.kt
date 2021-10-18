@@ -7,7 +7,7 @@ class Article(
     val title: String,
     val description: String?,
     val url: String,
-    val urlToImage: String?,
+    var urlToImage: String?,
     val publishedAt: String,
     val content: String?,
     val source: Source?

@@ -6,10 +6,13 @@
         <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_news.xml" value="0.20199275362318841" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_broken_image.xml" value="0.22870370370370371" />
+        <entry key="app/src/main/res/drawable-xxhdpi/loading_img.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/drawable/ic_activity_background.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/drawable/ic_activity_login_background_fields.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/drawable/ic_item_news_background_constraintlayout.xml" value="0.26614583333333336" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.22592592592592592" />
+        <entry key="app/src/main/res/drawable/loading_img.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/layout/activity_details_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.25" />

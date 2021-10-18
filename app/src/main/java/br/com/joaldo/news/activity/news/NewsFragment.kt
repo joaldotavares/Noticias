@@ -1,5 +1,6 @@
 package br.com.joaldo.news.activity.news
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.repository.network.response.NewsApi
+import br.com.joaldo.news.util.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class NewsFragment : Fragment() {
@@ -37,7 +39,26 @@ class NewsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         newsViewModel.newsViewModel.observe(viewLifecycleOwner, Observer {
-            configAdapter(it)
+            when(it.status){
+                Status.SUCCESS -> it.data?.let { newsApi ->
+                    binding.activityNewsProgressBar.visibility = View.GONE
+                    binding.activityNewsRecyclerview.visibility = View.VISIBLE
+                    configAdapter(newsApi)
+                }
+                Status.ERRO -> {
+                    var builder = AlertDialog.Builder(context)
+                    builder.setTitle("Error")
+                    builder.setMessage("${it.message}")
+                    builder.setPositiveButton("Ok"){_, _->}
+                    builder.create().show()
+                    binding.activityNewsProgressBar.visibility = View.GONE
+                    binding.activityNewsRecyclerview.visibility = View.VISIBLE
+                }
+                Status.LOADING -> {
+                    binding.activityNewsRecyclerview.visibility = View.GONE
+                    binding.activityNewsProgressBar.visibility = View.VISIBLE
+                }
+            }
         })
         newsViewModel.findNews()
     }

@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val findLoginModule = module {
 
-    factory<LoginDataSource>{
+    factory<LoginDataSource> {
         LoginDataSourceImpl()
     }
 
