@@ -18,6 +18,6 @@ val findNewsModel = module {
     }
 
     viewModel {
-        NewsViewModel(get())
+        NewsViewModel()
     }
 }
