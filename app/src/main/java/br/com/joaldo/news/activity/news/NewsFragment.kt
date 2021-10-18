@@ -1,5 +1,6 @@
 package br.com.joaldo.news.activity.news
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import br.com.joaldo.news.R
 import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.repository.network.response.NewsApi
+import br.com.joaldo.news.support.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.*
 
@@ -38,7 +40,28 @@ class NewsFragment : Fragment() {
 
 
         newsViewModel.newsViewModel.observe(viewLifecycleOwner, androidx.lifecycle.Observer{
-            configAdapter(it)
+            when(it.status){
+                Status.SUCCESS -> it.data?.let { newsApi ->
+                    binding.activityNewsProgressBar.visibility = View.GONE
+                    binding.activityNewsRecyclerview.visibility = View.VISIBLE
+                    configAdapter(newsApi)
+                }
+                Status.ERRO -> {
+                    val builder = AlertDialog.Builder(context)
+                    builder.setTitle("Erro")
+                            .setMessage("${it.message}")
+                            .setPositiveButton("OK"){_, _ ->}
+                            .create()
+                            .show()
+                    binding.activityNewsProgressBar.visibility = View.GONE
+                    binding.activityNewsRecyclerview.visibility = View.VISIBLE
+                }
+                Status.LOADING -> {
+                    binding.activityNewsProgressBar.visibility = View.VISIBLE
+                    binding.activityNewsRecyclerview.visibility = View.GONE
+                }
+            }
+
         })
         newsViewModel.findNews()
     }

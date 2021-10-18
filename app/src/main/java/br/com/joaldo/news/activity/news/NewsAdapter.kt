@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
+import br.com.joaldo.news.databinding.ItemNewsBinding
 import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.repository.network.response.Article
 import br.com.joaldo.news.repository.network.response.NewsApi
@@ -16,6 +17,7 @@ class NewsAdapter(
     private val news: NewsApi
 ) : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
+    private lateinit var binding: ItemNewsBinding
     var onItemClickListener: (news: Article) -> Unit = {}
 
     class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -25,12 +27,13 @@ class NewsAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
-        return NewsViewHolder(view)
+        binding = ItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return NewsViewHolder(binding.root)
     }
 
     override fun onBindViewHolder(holder: NewsViewHolder, position: Int) {
         val news = news.articles[position]
+        binding.news = news
         holder.title.text = news.title
         holder.description.text = news.description
         Glide.with(holder.itemView.context).load(news.urlToImage).into(holder.image)

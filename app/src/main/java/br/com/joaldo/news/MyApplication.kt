@@ -1,6 +1,7 @@
 package br.com.joaldo.news
 
 import android.app.Application
+import br.com.joaldo.news.di.findLoginModule
 import br.com.joaldo.news.di.findNewsModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -14,7 +15,7 @@ class MyApplication: Application(), KoinComponent {
         startKoin {
             androidLogger()
             androidContext(this@MyApplication)
-            modules(findNewsModel)
+            modules(findNewsModel, findLoginModule)
         }
     }
 }

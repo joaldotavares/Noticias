@@ -30,17 +30,17 @@ class LoginViewModel(
         }
     }
 
-    class LoginViewModelProvider(
-        private val repository: LoginDataSource
-    ) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
-                return LoginViewModel(repository) as T
-            } else {
-                throw IllegalArgumentException("Unknown ViewModel Class")
-            }
-        }
-
-    }
+//    class LoginViewModelProvider(
+//        private val repository: LoginDataSource
+//    ) : ViewModelProvider.Factory {
+//        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
+//            if (modelClass.isAssignableFrom(LoginViewModel::class.java)) {
+//                return LoginViewModel(repository) as T
+//            } else {
+//                throw IllegalArgumentException("Unknown ViewModel Class")
+//            }
+//        }
+//
+//    }
 
 }

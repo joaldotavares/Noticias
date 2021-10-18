@@ -3,18 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_home.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="..\:/Users/Joaldo/StudioProjects/Noticias/app/src/main/res/layout/activity_news.xml" value="0.20199275362318841" />
+        <entry key="app/src/main/res/drawable-xxhdpi/ic_broken_image.xml" value="0.22870370370370371" />
+        <entry key="app/src/main/res/drawable-xxhdpi/loading_img.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/drawable/ic_activity_background.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/drawable/ic_activity_login_background_fields.xml" value="0.22592592592592592" />
+        <entry key="app/src/main/res/drawable/ic_broken_image.xml" value="0.225" />
         <entry key="app/src/main/res/drawable/ic_item_news_background_constraintlayout.xml" value="0.26614583333333336" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.22592592592592592" />
+        <entry key="app/src/main/res/drawable/loading_animation.xml" value="0.225" />
+        <entry key="app/src/main/res/drawable/loading_img.xml" value="0.22870370370370371" />
         <entry key="app/src/main/res/layout/activity_details_news.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_home.xml" value="0.21481481481481482" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2359375" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_news.xml" value="0.25" />
-        <entry key="app/src/main/res/menu/menu_details.xml" value="0.24666666666666667" />
-        <entry key="app/src/main/res/menu/menu_news.xml" value="0.14166666666666666" />
-        <entry key="app/src/main/res/menu/sort_menu_news.xml" value="0.25" />
       </map>
     </option>
   </component>
