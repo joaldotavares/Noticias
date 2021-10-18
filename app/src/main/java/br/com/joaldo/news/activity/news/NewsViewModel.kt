@@ -25,7 +25,6 @@ class NewsViewModel : ViewModel() {
                 }
 
                 withContext(Dispatchers.Main){
-                    news.articles[0].urlToImage = "www.google.com"
                     _newsViewModel.value = Resources.success(news)
                 }
             }catch (e: Exception){
