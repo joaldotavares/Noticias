@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import br.com.joaldo.news.R
 import br.com.joaldo.news.databinding.ActivityNewsBinding
 import br.com.joaldo.news.notice.News
+import br.com.joaldo.news.repository.network.response.Article
 import br.com.joaldo.news.repository.network.response.NewsApi
 import br.com.joaldo.news.support.Status
 import org.koin.androidx.viewmodel.ext.android.viewModel

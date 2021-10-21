@@ -8,7 +8,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import br.com.joaldo.news.R
 import br.com.joaldo.news.databinding.ItemNewsBinding
-import br.com.joaldo.news.notice.News
 import br.com.joaldo.news.repository.network.response.Article
 import br.com.joaldo.news.repository.network.response.NewsApi
 import com.bumptech.glide.Glide
